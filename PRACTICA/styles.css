@@ -1,0 +1,1217 @@
+
+
+/* RESET GLOBAL - Elimina márgenes y padding por defecto de todos los elementos */
+* { 
+    margin: 0; /* Sin márgenes externos */
+    padding: 0; /* Sin relleno interno */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+/* ESTILOS DEL BODY - Configuración general de la página */
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente principal */
+    line-height: 1.6; /* Espaciado entre líneas */
+    color: #333; /* Color de texto principal (gris oscuro) */
+}
+
+/* BARRA DE NAVEGACIÓN - Header fijo en la parte superior */
+.navbar { 
+    background: rgba(44, 62, 80, 0.95); /* Fondo azul oscuro semi-transparente */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque del fondo */
+    color: rgba(62, 185, 246, 0.948); /* Texto blanco */
+    padding: 1rem 2rem; /* Espaciado interno: 16px arriba/abajo, 32px izq/der */
+    display: flex; /* Layout flexible */
+    justify-content: space-between; /* Separa elementos a los extremos */
+    align-items: center; /* Centra verticalmente */
+    position: fixed; /* Posición fija al hacer scroll */
+    width: 100%; /* Ancho completo */
+    top: 0; /* Pegado al borde superior */
+    z-index: 1000; /* Aparece por encima de otros elementos */
+    transition: all 0.3s; /* Transición suave para cambios */
+}
+
+/* CONTENEDOR DEL LOGO Y TÍTULO */
+.nav-brand { 
+    display: flex; /* Layout flexible */
+    align-items: center; /* Centra verticalmente logo y título */
+    gap: 0.5rem; /* Espacio de 8px entre logo y título */
+}
+
+/* IMAGEN DEL LOGO */
+.logo-img { 
+    width: 60px; /* Ancho fijo de 40 píxeles */
+    height: 60px; /* Alto fijo de 40 píxeles */
+    object-fit: contain; /* Mantiene proporciones de la imagen */
+}
+
+/* TÍTULO PRINCIPAL EN NAVBAR */
+.nav-brand h1 { 
+    margin: 0; /* Sin márgenes */
+    font-size: 1.5rem; /* Tamaño de fuente 24px */
+}
+
+/* MENÚ DE NAVEGACIÓN */
+.nav-menu { 
+    display: flex; /* Layout horizontal */
+    list-style: none; /* Sin viñetas de lista */
+    gap: 2rem; /* Espacio de 32px entre elementos */
+}
+
+/* ENLACES DEL MENÚ */
+.nav-menu a { 
+    color: white; /* Texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    padding: 0.5rem 1rem; /* Espaciado: 8px arriba/abajo, 16px izq/der */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: all 0.3s; /* Transición suave para efectos hover */
+}
+
+/* EFECTO HOVER EN ENLACES DEL MENÚ */
+.nav-menu a:hover { 
+    background: rgba(46, 103, 201, 0.689); /* Fondo blanco semi-transparente */
+    transform: translateY(-2px); /* Mueve 2px hacia arriba */
+}
+
+/* SECCIÓN HERO - Banner principal de la página */
+.hero { 
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%, #f093fb 200%); /* Gradiente de colores */
+    color: white; /* Texto blanco */
+    text-align: center; /* Texto centrado */
+    padding: 200px 2rem 150px; /* Espaciado: 200px arriba, 32px lados, 150px abajo */
+    margin-top: 60px; /* Margen superior para compensar navbar fijo */
+    position: relative; /* Para posicionar elementos internos */
+    overflow: hidden; /* Oculta contenido que se desborde */
+}
+
+/* PATRÓN DE FONDO DEL HERO */
+.hero::before { 
+    content: ''; /* Elemento vacío */
+    position: absolute; /* Posición absoluta */
+    top: 0; left: 0; right: 0; bottom: 0; /* Cubre toda la sección */
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.1"/><circle cx="80" cy="40" r="1" fill="white" opacity="0.1"/><circle cx="40" cy="80" r="1.5" fill="white" opacity="0.1"/></svg>'); /* Patrón de círculos */
+}
+
+/* CONTENIDO DEL HERO */
+.hero-content { 
+    position: relative; /* Para aparecer sobre el patrón de fondo */
+    z-index: 2; /* Nivel superior al patrón */
+}
+
+/* TÍTULO PRINCIPAL DEL HERO */
+.hero h2 { 
+    font-size: 4rem; /* Tamaño grande: 64px */
+    margin-bottom: 1rem; /* Margen inferior 16px */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Sombra del texto */
+    animation: fadeInUp 1s ease-out; /* Animación de entrada */
+}
+
+/* PÁRRAFO DEL HERO */
+.hero p { 
+    font-size: 1.3rem; /* Tamaño 20.8px */
+    margin-bottom: 2rem; /* Margen inferior 32px */
+    opacity: 0.9; /* Ligeramente transparente */
+    animation: fadeInUp 1s ease-out 0.3s both; /* Animación con retraso */
+}
+
+/* CONTENEDOR DE BOTONES CTA */
+.cta-buttons { 
+    display: flex; /* Layout flexible */
+    gap: 1rem; /* Espacio de 16px entre botones */
+    justify-content: center; /* Centra horizontalmente */
+    flex-wrap: wrap; /* Permite salto de línea en móviles */
+    animation: fadeInUp 1s ease-out 0.6s both; /* Animación con más retraso */
+}
+
+/* BOTONES CTA PRINCIPALES */
+.cta-button { 
+    background: #e74c3c; /* Fondo rojo */
+    color: white; /* Texto blanco */
+    padding: 18px 35px; /* Espaciado interno generoso */
+    border: none; /* Sin borde */
+    border-radius: 50px; /* Bordes muy redondeados (píldora) */
+    font-size: 1.1rem; /* Tamaño de fuente 17.6px */
+    cursor: pointer; /* Cursor de mano */
+    transition: all 0.3s; /* Transición suave */
+    text-decoration: none; /* Sin subrayado para enlaces */
+    display: inline-block; /* Comportamiento de bloque inline */
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4); /* Sombra roja suave */
+}
+
+/* EFECTO HOVER EN BOTONES CTA */
+.cta-button:hover { 
+    background: #c0392b; /* Rojo más oscuro */
+    transform: translateY(-3px); /* Mueve 3px hacia arriba */
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6); /* Sombra más intensa */
+}
+
+/* BOTÓN CTA SECUNDARIO */
+.cta-secondary { 
+    background: transparent; /* Fondo transparente */
+    border: 2px solid white; /* Borde blanco */
+}
+
+/* HOVER DEL BOTÓN SECUNDARIO */
+.cta-secondary:hover { 
+    background: white; /* Fondo blanco */
+    color: #667eea; /* Texto azul */
+}
+
+/* SECCIÓN DE CARACTERÍSTICAS */
+.features { 
+    padding: 100px 2rem; /* Espaciado: 100px arriba/abajo, 32px lados */
+    background: #f8f9fa; /* Fondo gris muy claro */
+}
+
+/* GRID DE CARACTERÍSTICAS */
+.features-grid { 
+    display: grid; /* Layout de cuadrícula */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
+    gap: 3rem; /* Espacio de 48px entre elementos */
+    max-width: 1200px; /* Ancho máximo */
+    margin: 0 auto; /* Centrado horizontal */
+}
+
+/* TARJETAS DE CARACTERÍSTICAS */
+.feature-card { 
+    background: white; /* Fondo blanco */
+    padding: 3rem 2rem; /* Espaciado: 48px arriba/abajo, 32px lados */
+    border-radius: 15px; /* Bordes redondeados */
+    text-align: center; /* Texto centrado */
+    box-shadow: 0 10px 30px rgba(43, 211, 220, 0.907); /* Sombra suave */
+    transition: transform 0.3s; /* Transición para hover */
+}
+
+/* EFECTO HOVER EN TARJETAS */
+.feature-card:hover { 
+    transform: translateY(-10px); /* Mueve 10px hacia arriba */
+}
+
+/* ICONOS DE CARACTERÍSTICAS */
+.feature-icon { 
+    font-size: 3rem; /* Tamaño grande: 48px */
+    margin-bottom: 1rem; /* Margen inferior 16px */
+}
+
+/* SECCIÓN DE ESTADÍSTICAS */
+.stats { 
+    background: linear-gradient(45deg, #474747, #3f3f3f); /* Gradiente azul oscuro */
+    color: white; /* Texto blanco */
+    padding: 80px 2rem; /* Espaciado: 80px arriba/abajo, 32px lados */
+    text-align: center; /* Texto centrado */
+}
+
+/* GRID DE ESTADÍSTICAS */
+.stats-grid { 
+    display: grid; /* Layout de cuadrícula */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas responsivas */
+    gap: 2rem; /* Espacio de 32px entre elementos */
+    max-width: 800px; /* Ancho máximo */
+    margin: 0 auto; /* Centrado horizontal */
+}
+
+/* NÚMEROS DE ESTADÍSTICAS DONDE DICE NUMEROS QUE NOS AVALAN */
+.stat-item h3 { 
+    font-size: 3rem; /* Tamaño grande: 48px */
+    color: #3498db; /* Color azul */
+    margin-bottom: 0.5rem; /* Margen inferior 8px */
+}
+
+/* SECCIÓN DE TESTIMONIOS/SERVICIOS */
+.testimonials { 
+    padding: 100px 2rem; /* Espaciado: 100px arriba/abajo, 32px lados */
+}
+
+/* TARJETA DE TESTIMONIO */
+.testimonial-card { 
+    background: white; /* Fondo blanco */
+    padding: 2rem; /* Espaciado interno 32px */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 5px 15px rgba(33, 204, 223, 0.921); /* Sombra suave */
+    max-width: 600px; /* Ancho máximo */
+    margin: 0 auto; /* Centrado horizontal */
+    text-align: center; /* Texto centrado */
+}
+
+/* SECCIÓN DE NEWSLETTER  DONDE DICE MANTENTE AL DIA, DONDE VAN LA SUSCRICION */
+.newsletter { 
+    background: #444545; /* Fondo azul */
+    color: white; /* Texto blanco */
+    padding: 60px 2rem; /* Espaciado: 60px arriba/abajo, 32px lados */
+    text-align: center; /* Texto centrado */
+}
+
+/* FORMULARIO DE NEWSLETTER */
+.newsletter-form { 
+    display: flex; /* Layout flexible */
+    gap: 1rem; /* Espacio de 16px entre elementos */
+    justify-content: center; /* Centrado horizontal */
+    max-width: 400px; /* Ancho máximo */
+    margin: 2rem auto 0; /* Margen: 32px arriba, centrado, 0 abajo */
+}
+
+/* INPUT DE EMAIL */
+.newsletter input { 
+    flex: 1; /* Ocupa el espacio disponible */
+    padding: 12px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* BOTÓN DE SUSCRIPCIÓN */
+.newsletter button { 
+    background: #e74c3c; /* Fondo rojo */
+    color: white; /* Texto blanco */
+    padding: 12px 24px; /* Espaciado: 12px arriba/abajo, 24px lados */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano */
+}
+
+/* FOOTER - Pie de página */
+footer { 
+    background: #2c3e50; /* Fondo azul oscuro */
+    color: white; /* Texto blanco */
+    padding: 40px 2rem 20px; /* Espaciado: 40px arriba, 32px lados, 20px abajo */
+}
+
+/* CONTENIDO DEL FOOTER */
+.footer-content { 
+    display: grid; /* Layout de cuadrícula */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas responsivas */
+    gap: 3rem; /* Espacio de 48px entre secciones */
+    max-width: 1200px; /* Ancho máximo */
+    margin: 0 auto; /* Centrado horizontal */
+}
+
+/* TÍTULOS DE SECCIONES DEL FOOTER */
+.footer-section h3 { 
+    color: #3498db; /* Color azul */
+    margin-bottom: 1rem; /* Margen inferior 16px */
+}
+
+/* ENLACES SOCIALES */
+.social-links { 
+    display: flex; /* Layout flexible */
+    gap: 1rem; /* Espacio de 16px entre iconos */
+    margin-top: 1rem; /* Margen superior 16px */
+}
+
+/* ICONOS SOCIALES */
+.social-links a { 
+    color: white; /* Color blanco */
+    font-size: 1.5rem; /* Tamaño 24px */
+    transition: color 0.3s; /* Transición suave */
+}
+
+/* HOVER EN ICONOS SOCIALES */
+.social-links a:hover { 
+    color: #3498db; /* Cambia a azul */
+}
+
+/* ANIMACIÓN FADE IN UP */
+@keyframes fadeInUp { 
+    from { 
+        opacity: 0; /* Inicia invisible */
+        transform: translateY(30px); /* 30px hacia abajo */
+    } 
+    to { 
+        opacity: 1; /* Termina visible */
+        transform: translateY(0); /* Posición normal */
+    } 
+}
+
+/* SECCIÓN DE CONTACTO */
+.contact-section {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 100px 2rem;
+}
+
+/* CONTENEDOR PARA PÁGINAS SEPARADAS */
+.container {
+    margin-top: 80px;
+}
+
+/* BOTÓN VOLVER */
+.back-btn {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin: 2rem;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.back-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.contact-header h2 {
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.contact-header p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-info {
+    display: grid;
+    gap: 2rem;
+}
+
+/* colo de las card de contacto*/
+.contact-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-details h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.contact-details p {
+    color: #666;
+    margin-bottom: 0.3rem;
+    line-height: 1.5;
+}
+
+.contact-details small {
+    color: #999;
+    font-style: italic;
+}
+
+.contact-form-container {
+    display: grid;
+    gap: 2rem;
+}
+
+.contact-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.contact-form h3 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e1e8ed;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.map-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.map-container h3 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.map-placeholder {
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-content h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.map-content p {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.map-link {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: all 0.3s;
+}
+
+.map-link:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* FOOTER MEJORADO */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-logo h3 {
+    color: #3498db;
+    margin: 0;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #3498db;
+}
+
+/* ANIMACIONES ADICIONALES PARA ELEMENTOS ESPECÍFICOS */
+.navbar {
+    backdrop-filter: blur(15px);
+    transition: all 0.3s ease;
+}
+
+.navbar:hover {
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+
+
+.logo-img {
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: rotate(360deg) scale(1.1);
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 15px;
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+
+.precio-actual {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.social-links a {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-links a:hover {
+    transform: translateY(-5px) scale(1.2) rotate(5deg);
+}
+
+/* EFECTOS DE CARGA */
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.page-loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* MEJORAS EN FILTROS */
+.filter-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%);
+}
+
+.filter-btn:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+/* CARRUSEL DE IMÁGENES */
+.carousel-section {
+    padding: 100px 2rem;
+    background: linear-gradient(135deg, #f7f7f9 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="white" opacity="0.1"/><circle cx="80" cy="40" r="0.5" fill="white" opacity="0.1"/><circle cx="40" cy="80" r="1.5" fill="white" opacity="0.1"/></svg>');
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.carousel-slide {
+    display: none;
+    background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+    backdrop-filter: blur(20px);
+}
+
+.carousel-slide.active {
+    display: block;
+}
+
+.carousel-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    min-height: 300px;
+}
+
+.carousel-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(102, 126, 234, 0.1), transparent 70%);
+}
+
+.carousel-image img {
+    width: 350px;
+    height: 350px;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2));
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.carousel-image:hover img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 25px 50px rgba(0,0,0,0.3));
+}
+
+.carousel-text {
+    padding: 4rem;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,249,250,0.9));
+    position: relative;
+}
+
+.carousel-text::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20%;
+    width: 4px;
+    height: 60%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+
+.carousel-text h3 {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.carousel-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+    color: #667eea;
+    border: 2px solid rgba(102, 126, 234, 0.3);
+    padding: 18px 24px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    z-index: 100;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.carousel-btn:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+    border-color: transparent;
+}
+
+.carousel-btn.prev {
+    left: 30px;
+}
+
+.carousel-btn.next {
+    right: 30px;
+}
+
+.carousel-dots {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,249,250,0.9));
+    backdrop-filter: blur(10px);
+}
+
+
+
+
+
+
+
+
+
+
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 8px;
+    background: linear-gradient(135deg, #bdc3c7, #95a5a6);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.dot.active, .dot:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    transform: scale(1.3);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+
+
+
+
+
+
+
+
+
+/* CARD ESTILO APPLE */
+.showcase-section {
+    padding: 120px 2rem;
+    background: #b5b5b7ab;
+    position: relative;
+}
+
+.showcase-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.showcase-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+}
+
+.showcase-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.showcase-card.left {
+    margin-top: 0;
+}
+
+.showcase-card.center {
+    margin-top: 60px;
+    transform: scale(1.05);
+}
+
+.showcase-card.right {
+    margin-top: 120px;
+}
+
+.card-image {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(29, 29, 31, 0.02), transparent 70%);
+}
+
+.card-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.showcase-card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: #86868b;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.card-link {
+    color: #007aff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.card-link:hover {
+    color: #0056cc;
+    transform: translateX(4px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* PÁGINA DE SERVICIOS */
+.services-section {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 100px 2rem;
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.services-header h2 {
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.services-header p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(27, 182, 220, 0.908);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.service-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.service-features {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.service-features li {
+    padding: 0.3rem 0;
+    color: #555;
+}
+
+.service-price {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE - Adaptación para móviles */
+@media (max-width: 768px) { 
+    .hero h2 { 
+        font-size: 2.5rem; /* Título más pequeño: 40px */
+    } 
+    .cta-buttons { 
+        flex-direction: column; /* Botones en columna */
+        align-items: center; /* Centrados */
+    } 
+    .newsletter-form { 
+        flex-direction: column; /* Formulario en columna */
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-header h2 {
+        font-size: 2rem;
+    }
+    
+    .contact-form {
+        padding: 1.5rem;
+    }
+    
+    .contact-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-icon {
+        align-self: center;
+    }
+    
+    .container {
+        margin-top: 60px;
+    }
+    
+    .back-btn {
+        margin: 1rem;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Reducir animaciones en móvil para mejor rendimiento */
+    .producto-card:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-8px) scale(1.01);
+    }
+    
+    .carousel-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .carousel-image {
+        order: 1;
+    }
+    
+    .carousel-text {
+        order: 2;
+        padding: 2rem 1rem;
+    }
+    
+    .carousel-text h3 {
+        font-size: 1.5rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .showcase-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .showcase-card.left,
+    .showcase-card.center,
+    .showcase-card.right {
+        margin-top: 0;
+        transform: none;
+    }
+    
+    .card-content h3 {
+        font-size: 1.5rem;
+    }
+}

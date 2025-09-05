@@ -1,0 +1,292 @@
+/* RESET GLOBAL - Elimina márgenes y padding por defecto de todos los elementos */
+* { 
+    margin: 0; /* Sin márgenes externos */
+    padding: 0; /* Sin relleno interno */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+/* ESTILOS DEL BODY - Configuración general de la página */
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente principal */
+    line-height: 1.6; /* Espaciado entre líneas */
+    color: #333; /* Color de texto principal (gris oscuro) */
+}
+
+/* BARRA DE NAVEGACIÓN - Header fijo en la parte superior */
+.navbar { 
+    background: rgba(44, 62, 80, 0.95); /* Fondo azul oscuro semi-transparente */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque del fondo */
+    color:  rgba(62, 185, 246, 0.948); /* Texto blanco */
+    padding: 1rem 2rem; /* Espaciado interno: 16px arriba/abajo, 32px izq/der */
+    display: flex; /* Layout flexible */
+    justify-content: space-between; /* Separa elementos a los extremos */
+    align-items: center; /* Centra verticalmente */
+    position: fixed; /* Posición fija al hacer scroll */
+    width: 100%; /* Ancho completo */
+    top: 0; /* Pegado al borde superior */
+    z-index: 1000; /* Aparece por encima de otros elementos */
+}
+
+/* CONTENEDOR DEL LOGO Y TÍTULO */
+.nav-brand { 
+    display: flex; /* Layout flexible */
+    align-items: center; /* Centra verticalmente logo y título */
+    gap: 0.5rem; /* Espacio de 8px entre logo y título */
+}
+
+/* IMAGEN DEL LOGO */
+.logo-img { 
+    width: 60px; /* Ancho fijo de 40 píxeles */
+    height: 60px; /* Alto fijo de 40 píxeles */
+    object-fit: contain; /* Mantiene proporciones de la imagen */
+}
+
+/* TÍTULO PRINCIPAL EN NAVBAR */
+.nav-brand h1 { 
+    margin: 0; /* Sin márgenes */
+    font-size: 1.5rem; /* Tamaño de fuente 24px */
+}
+
+/* MENÚ DE NAVEGACIÓN */
+.nav-menu { 
+    display: flex; /* Layout horizontal */
+    list-style: none; /* Sin viñetas de lista */
+    gap: 2rem; /* Espacio de 32px entre elementos */
+}
+
+/* ENLACES DEL MENÚ */
+.nav-menu a { 
+    color: white; /* Texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    padding: 0.5rem 1rem; /* Espaciado: 8px arriba/abajo, 16px izq/der */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: all 0.3s; /* Transición suave para efectos hover */
+}
+
+/* EFECTO HOVER EN ENLACES DEL MENÚ */
+.nav-menu a:hover { 
+    background: rgba(255,255,255,0.1); /* Fondo blanco semi-transparente */
+}
+
+/* CONTENEDOR PRINCIPAL DE LA PÁGINA */
+.container { 
+    max-width: 1200px; /* Ancho máximo de 1200px */
+    margin: 0 auto; /* Centrado horizontal */
+    padding: 100px 2rem 2rem; /* Espaciado: 100px arriba, 32px lados, 32px abajo */
+}
+
+/* ENCABEZADO DE LA PÁGINA */
+.page-header { 
+    text-align: center; /* Texto centrado */
+    margin-bottom: 3rem; /* Margen inferior de 48px */
+}
+
+/* TÍTULO PRINCIPAL DE LA PÁGINA */
+.page-header h1 { 
+    font-size: 3rem; /* Tamaño grande: 48px */
+    color: #2c3e50; /* Color azul oscuro */
+    margin-bottom: 1rem; /* Margen inferior de 16px */
+}
+
+/* CONTENEDOR DE FILTROS */
+.filters { 
+    display: flex; /* Layout flexible */
+    gap: 1rem; /* Espacio de 16px entre botones */
+    justify-content: center; /* Centrado horizontal */
+    margin-bottom: 3rem; /* Margen inferior de 48px */
+    flex-wrap: wrap; /* Permite salto de línea en pantallas pequeñas */
+}
+
+/* BOTONES DE FILTRO */
+.filter-btn { 
+    background: #ecf0f1; /* Fondo gris claro */
+    color: #2c3e50; /* Texto azul oscuro */
+    padding: 10px 20px; /* Espaciado: 10px arriba/abajo, 20px izq/der */
+    border: none; /* Sin borde */
+    border-radius: 25px; /* Bordes muy redondeados (píldora) */
+    cursor: pointer; /* Cursor de mano */
+    transition: all 0.3s; /* Transición suave para cambios */
+}
+
+/* ESTADO ACTIVO Y HOVER DE FILTROS */
+.filter-btn.active, .filter-btn:hover { 
+    background: #3498db; /* Fondo azul */
+    color: white; /* Texto blanco */
+}
+
+/* GRID DE PRODUCTOS */
+.productos-grid { 
+    display: grid; /* Layout de cuadrícula */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas mínimo 300px */
+    gap: 2rem; /* Espacio de 32px entre tarjetas */
+}
+
+/* TARJETAS DE PRODUCTO */
+.producto-card { 
+    background: white; /* Fondo blanco */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 2rem; /* Espaciado interno de 32px */
+    box-shadow: 0 10px 30px rgba(42, 200, 236, 0.933); /* Sombra suave */
+    transition: all 0.3s; /* Transición suave para hover */
+    position: relative; /* Para posicionar badges */
+    overflow: hidden; /* Oculta contenido que se desborde */
+}
+
+/* EFECTO HOVER EN TARJETAS DE PRODUCTO */
+.producto-card:hover { 
+    transform: translateY(-10px); /* Mueve 10px hacia arriba */
+    box-shadow: 0 20px 40px rgba(246, 15, 15, 0.94); /* Sombra más intensa */
+}
+
+/* IMAGEN/ICONO DEL PRODUCTO */
+.producto-img { 
+    width: 100%; /* Ancho completo */
+    height: 200px; /* Alto fijo de 200px */
+    background: linear-gradient(45deg, #f39c12, #58ced4c3); /* Gradiente naranja */
+    border-radius: 10px; /* Bordes redondeados */
+    display: flex; /* Layout flexible */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    font-size: 4rem; /* Tamaño de emoji grande: 64px */
+    margin-bottom: 1rem; /* Margen inferior de 16px */
+}
+
+/* BADGE/ETIQUETA DEL PRODUCTO (Nuevo, Oferta, etc.) */
+.producto-badge { 
+    position: absolute; /* Posición absoluta */
+    top: 1rem; /* 16px desde arriba */
+    right: 1rem; /* 16px desde la derecha */
+    background: #e74c3c; /* Fondo rojo */
+    color: white; /* Texto blanco */
+    padding: 0.3rem 0.8rem; /* Espaciado: 4.8px arriba/abajo, 12.8px izq/der */
+    border-radius: 15px; /* Bordes redondeados */
+    font-size: 0.8rem; /* Tamaño pequeño: 12.8px */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* TÍTULO DEL PRODUCTO */
+.producto-info h3 { 
+    font-size: 1.5rem; /* Tamaño: 24px */
+    margin-bottom: 0.5rem; /* Margen inferior de 8px */
+    color: #2c3e50; /* Color azul oscuro */
+}
+
+/* LISTA DE ESPECIFICACIONES */
+.producto-specs { 
+    list-style: none; /* Sin viñetas */
+    margin: 1rem 0; /* Margen: 16px arriba y abajo */
+}
+
+/* ELEMENTOS DE ESPECIFICACIONES */
+.producto-specs li { 
+    padding: 0.2rem 0; /* Espaciado: 3.2px arriba/abajo */
+    color: #7f8c8d; /* Color gris */
+    font-size: 0.9rem; /* Tamaño: 14.4px */
+}
+
+/* CHECKMARK ANTES DE CADA ESPECIFICACIÓN */
+.producto-specs li::before { 
+    content: '✓ '; /* Símbolo de check */
+    color: #27ae60; /* Color verde */
+    font-weight: bold; /* En negrita */
+}
+
+/* CONTENEDOR DE PRECIOS */
+.precio-container { 
+    display: flex; /* Layout flexible */
+    align-items: center; /* Centra verticalmente */
+    gap: 1rem; /* Espacio de 16px entre elementos */
+    margin: 1rem 0; /* Margen: 16px arriba y abajo */
+}
+
+/* PRECIO ACTUAL */
+.precio-actual { 
+    font-size: 2rem; /* Tamaño grande: 32px */
+    font-weight: bold; /* En negrita */
+    color: #e74c3c; /* Color rojo */
+}
+
+/* PRECIO ANTERIOR (tachado) */
+.precio-anterior { 
+    font-size: 1.2rem; /* Tamaño: 19.2px */
+    color: #95a5a6; /* Color gris */
+    text-decoration: line-through; /* Texto tachado */
+}
+
+/* ETIQUETA DE DESCUENTO */
+.descuento { 
+    background: #27ae60; /* Fondo verde */
+    color: white; /* Texto blanco */
+    padding: 0.2rem 0.5rem; /* Espaciado: 3.2px arriba/abajo, 8px izq/der */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 0.8rem; /* Tamaño pequeño: 12.8px */
+}
+
+/* CONTENEDOR DE BOTONES DE ACCIÓN */
+.producto-actions { 
+    display: flex; /* Layout flexible */
+    gap: 1rem; /* Espacio de 16px entre botones */
+    margin-top: 1.5rem; /* Margen superior de 24px */
+}
+
+/* BOTÓN DE COMPRAR */
+.btn-comprar { 
+    flex: 1;                           /* Ocupa el espacio disponible */
+    background: #656c68b8;           /* Fondo verde */
+    color: white;                    /* Texto blanco */
+    padding: 12px;                     /* Espaciado interno de 12px */
+    border: none;                      /* Sin borde */
+    border-radius: 8px;                /* Bordes redondeados */
+    cursor: pointer;                   /* Cursor de mano */
+    font-weight: bold;                 /* Texto en negrita */
+    transition: all 0.3s;              /* Transición suave */
+}
+
+/* EFECTO HOVER EN BOTÓN COMPRAR */
+.btn-comprar:hover { 
+    background: #229954;             /* Verde más oscuro */
+    transform: translateY(-2px);       /* Mueve 2px hacia arriba */
+}
+
+/* BOTÓN DE INFORMACIÓN */
+.btn-info { 
+    background:#656c68b8; /* Fondo azul */
+    color: white; /* Texto blanco */
+    padding: 12px; /* Espaciado interno de 12px */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano */
+    transition: all 0.3s; /* Transición suave */
+}
+
+/* EFECTO HOVER EN BOTÓN INFO */
+.btn-info:hover { 
+    background: #2980b9; /* Azul más oscuro */
+}
+
+/* BOTÓN DE VOLVER */
+.back-btn { 
+    display: inline-block; /* Comportamiento de bloque inline */
+    background: #95a5a6; /* Fondo gris */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado: 10px arriba/abajo, 20px izq/der */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-bottom: 2rem; /* Margen inferior de 32px */
+    transition: all 0.3s; /* Transición suave */
+}
+
+/* EFECTO HOVER EN BOTÓN VOLVER */
+.back-btn:hover { 
+    background: #7f8c8d; /* Gris más oscuro */
+}
+
+/* RESPONSIVE - Adaptación para móviles */
+@media (max-width: 768px) { 
+    .productos-grid { 
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+    } 
+    .producto-actions { 
+        flex-direction: column; /* Botones en columna */
+    } 
+}
