@@ -12,7 +12,12 @@
             <img src="imagenes/Logo.png" alt="TechPhone Logo" class="logo-img">
             <h1>TechPhone</h1>
         </div>
-        <ul class="nav-menu">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="productos.html">Productos</a></li>
             <li><a href="servicios.html">Servicios</a></li>
@@ -145,5 +150,17 @@
     </footer>
 
     <script src="script.js"></script>
-</body>
-</html>
+    <script>
+        // Hamburguesa menú
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navMenu = document.getElementById('navMenu');
+        hamburgerBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburgerBtn.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburgerBtn.classList.remove('active');
+            });
+        });

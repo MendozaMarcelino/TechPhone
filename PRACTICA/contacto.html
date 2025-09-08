@@ -21,7 +21,12 @@
             <img src="imagenes/Logo.png" alt="TechPhone Logo" class="logo-img">
             <h1>TechPhone</h1>
         </div>
-        <ul class="nav-menu">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="productos.html">Productos</a></li>
             <li><a href="servicios.html">Servicios</a></li>
@@ -44,93 +49,17 @@
                 <div class="contact-content">
                     <div class="contact-info">
                         <div class="contact-card">
-                            <div class="contact-icon">📍</div>
-                            <div class="contact-details">
-                                <h3>Ubicación</h3>
-                                <p>Calle 25 #14-45, Centro<br>Sincelejo, Sucre - Colombia</p>
-                                <small>Frente al Parque Santander</small>
-                            </div>
                         </div>
                         
                         <div class="contact-card">
-                            <div class="contact-icon">📞</div>
-                            <div class="contact-details">
-                                <h3>Teléfonos</h3>
-                                <p><strong>Ventas:</strong> +57 5 282-4567</p>
-                                <p><strong>Soporte:</strong> +57 5 282-4568</p>
-                                <p><strong>WhatsApp:</strong> +57 300 123-4567</p>
-                            </div>
                         </div>
                         
                         <div class="contact-card">
-                            <div class="contact-icon">📧</div>
-                            <div class="contact-details">
-                                <h3>Email</h3>
-                                <p><strong>Ventas:</strong> ventas@techphone.com</p>
-                                <p><strong>Soporte:</strong> soporte@techphone.com</p>
-                                <p><strong>General:</strong> info@techphone.com</p>
-                            </div>
                         </div>
                         
-                        <div class="contact-card">
-                            <div class="contact-icon">🕒</div>
-                            <div class="contact-details">
-                                <h3>Horarios de Atención</h3>
-                                <p><strong>Lun - Vie:</strong> 8:00 AM - 8:00 PM</p>
-                                <p><strong>Sábados:</strong> 9:00 AM - 6:00 PM</p>
-                                <p><strong>Domingos:</strong> 10:00 AM - 4:00 PM</p>
-                                <small>Soporte 24/7 vía WhatsApp</small>
-                            </div>
-                        </div>
                     </div>
                     
                     <div class="contact-form-container">
-                        <div class="contact-form">
-                            <h3>💬 Envíanos un Mensaje</h3>
-                            <form id="contactForm">
-                                <div class="form-group">
-                                    <input type="text" id="nombre" placeholder="Tu nombre completo" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" id="email" placeholder="Tu email" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="tel" id="telefono" placeholder="Tu teléfono (opcional)">
-                                </div>
-                                <div class="form-group">
-                                    <select id="asunto" required>
-                                        <option value="">Selecciona un tema</option>
-                                        <option value="ventas">Consulta de Ventas</option>
-                                        <option value="soporte">Soporte Técnico</option>
-                                        <option value="garantia">Garantía</option>
-                                        <option value="reparacion">Reparación</option>
-                                        <option value="otro">Otro</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <textarea id="mensaje" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
-                                </div>
-                                <button type="submit" class="submit-btn">📤 Enviar Mensaje</button>
-                            </form>
-                        </div>
-                        
-                        <div class="map-container">
-                            <h3>📍 Encuéntranos</h3>
-                            <div class="map-placeholder">
-                                <div class="map-content">
-                                    <h4>🏪 TechPhone Sincelejo</h4>
-                                    <p>Calle 25 #14-45, Centro</p>
-                                    <p>Sincelejo, Sucre</p>
-                                    <br>
-                                    <p><strong>Puntos de referencia:</strong></p>
-                                    <p>• Frente al Parque Santander</p>
-                                    <p>• A 2 cuadras del Centro Comercial</p>
-                                    <p>• Cerca de la Alcaldía Municipal</p>
-                                    <br>
-                                    <a href="https://maps.google.com" target="_blank" class="map-link"> Ver en Google Maps</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -184,6 +113,20 @@
                 alert(`¡Gracias ${nombre}! Tu mensaje ha sido enviado. Te contactaremos pronto.`);
                 document.getElementById('contactForm').reset();
             }
+        });
+
+        // Hamburguesa menú
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navMenu = document.getElementById('navMenu');
+        hamburgerBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburgerBtn.classList.toggle('active');
+       });
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburgerBtn.classList.remove('active');
+            });
         });
     </script>
 </body>
