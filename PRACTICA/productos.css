@@ -47,6 +47,35 @@ body {
     font-size: 1.5rem; /* Tamaño de fuente 24px */
 }
 
+/* MENÚ HAMBURGUESA */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
 /* MENÚ DE NAVEGACIÓN */
 .nav-menu { 
     display: flex; /* Layout horizontal */
@@ -282,7 +311,42 @@ body {
 }
 
 /* RESPONSIVE - Adaptación para móviles */
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: rgba(44, 62, 80, 0.98);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+        backdrop-filter: blur(10px);
+        padding: 2rem 0;
+        gap: 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+    
+    .nav-menu a {
+        font-size: 1.2rem;
+        padding: 1rem;
+        display: block;
+        border-radius: 8px;
+        margin: 0 1rem;
+    }
+    
     .productos-grid { 
         grid-template-columns: 1fr; /* Una sola columna en móvil */
     } 

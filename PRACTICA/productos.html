@@ -7,23 +7,23 @@
     <link rel="stylesheet" href="productos.css">
 </head>
 <body>
-   <nav class="navbar">
-    <div class="nav-brand">
-        <img src="imagenes/Logo.png" alt="TechPhone Logo" class="logo-img">
-        <h1>TechPhone</h1>
-    </div>
-    <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-    <ul class="nav-menu" id="navMenu">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="productos.html">Productos</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-</nav>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="imagenes/Logo.png" alt="TechPhone Logo" class="logo-img">
+            <h1>TechPhone</h1>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
 
 
 
@@ -541,7 +541,7 @@
 
             <div class="producto-card" data-category="accesorios">
                 <div class="producto-badge">Nuevo</div>
-                <div class="producto-img" style="background: linear-gradient(45deg, #4facfe, #00f2fe);"><img src="imagenes/Cargador Inalambrico.png" alt="" width="200"></div>
+                <div class="producto-img" style="background: linear-gradient(45deg, #4facfe, #00f2fe);"><img src="imagenes/Cargador Inalámbrico MagSafe.png" alt="" width="200"></div>
                 <div class="producto-info">
                     <h3>Cargador Inalámbrico MagSafe</h3>
                     <ul class="producto-specs">
@@ -562,7 +562,7 @@
             </div>
 
             <div class="producto-card" data-category="accesorios">
-                <div class="producto-img" style="background: linear-gradient(45deg, #667eea, #764ba2);"><img src="imagenes/Funda iPhone.png" alt="" width="180"></div>
+                <div class="producto-img" style="background: linear-gradient(45deg, #667eea, #764ba2);"><img src="imagenes/Funda Protectora Premium.png" alt="" width="180"></div>
                 <div class="producto-info">
                     <h3>Funda Protectora Premium</h3>
                     <ul class="producto-specs">
@@ -585,7 +585,7 @@
 
             <div class="producto-card" data-category="accesorios">
                 <div class="producto-badge">Bestseller</div>
-                <div class="producto-img" style="background: linear-gradient(45deg, #f093fb, #f5576c);"><img src="imagenes/Power Bank.png" alt="" width="220"></div>
+                <div class="producto-img" style="background: linear-gradient(45deg, #f093fb, #f5576c);"><img src="imagenes/Power Bank 20000mAh.png" alt="" width="200"></div>
                 <div class="producto-info">
                     <h3>Power Bank 20000mAh</h3>
                     <ul class="producto-specs">
@@ -607,7 +607,7 @@
             </div>
 
             <div class="producto-card" data-category="accesorios">
-                <div class="producto-img" style="background: linear-gradient(45deg, #a8edea, #fed6e3);"><img src="imagenes/Soporte Auto.png" alt="" width="190"></div>
+                <div class="producto-img" style="background: linear-gradient(45deg, #a8edea, #fed6e3);"><img src="imagenes/Soporte Magnético Auto.png" alt="" width="175"></div>
                 <div class="producto-info">
                     <h3>Soporte Magnético Auto</h3>
                     <ul class="producto-specs">
@@ -629,7 +629,7 @@
 
             <div class="producto-card" data-category="accesorios">
                 <div class="producto-badge">Oferta</div>
-                <div class="producto-img" style="background: linear-gradient(45deg, #ffecd2, #fcb69f);"><img src="imagenes/Audifonos Bluetooth.png" alt="" width="210"></div>
+                <div class="producto-img" style="background: linear-gradient(45deg, #ffecd2, #fcb69f);"><img src="imagenes/Audífonos Bluetooth Sport.png" alt="" width="210"></div>
                 <div class="producto-info">
                     <h3>Audífonos Bluetooth Sport</h3>
                     <ul class="producto-specs">
@@ -676,20 +676,6 @@
                 });
             });
         });
-
-         // Hamburguesa menú
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const navMenu = document.getElementById('navMenu');
-    hamburgerBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        hamburgerBtn.classList.toggle('active');
-    });
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            hamburgerBtn.classList.remove('active');
-        });
-    });
     </script>
 </body>
 </html>

@@ -422,6 +422,35 @@ function iniciarTransicionPagina() {
     });
 }
 
+// 🍔 MENÚ HAMBURGUESA
+function inicializarMenuHamburguesa() {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Cerrar menú al hacer clic fuera
+        document.addEventListener('click', function(e) {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    }
+}
+
 // 🎯 INICIALIZACIÓN OPTIMIZADA
 document.addEventListener('DOMContentLoaded', function() {
     // Funcionalidades para todas las páginas
@@ -429,6 +458,7 @@ document.addEventListener('DOMContentLoaded', function() {
     agregarAnimaciones();
     contadorVisitas();
     agregarModoOscuro();
+    inicializarMenuHamburguesa();
     
     // Solo para página principal
     if (window.location.pathname.includes('index.html') || window.location.pathname === '/') {
